@@ -1,3 +1,4 @@
+
 // SongQueue.js - Defines a backbone model class for the song queue.
 var SongQueue = Songs.extend({
 
@@ -19,7 +20,7 @@ var SongQueue = Songs.extend({
       this.remove(model);
     });
 
-    this.on('change:voteCount', function(){
+    this.on('voted', function(){
       this.sort();
     });
   },

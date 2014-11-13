@@ -4,9 +4,11 @@ var SongQueueView = Backbone.View.extend({
   tagName: "table",
 
   initialize: function() {
-    // this.collection.comparator = 'voteCount';
-
     this.collection.on('add remove', function() {
+      this.render();
+    }, this);
+
+    this.collection.on('sort', function() {
       this.render();
     }, this);
   },

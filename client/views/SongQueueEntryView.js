@@ -23,10 +23,6 @@ var SongQueueEntryView = Backbone.View.extend({
   },
 
   initialize: function() {
-    this.model.on('change:voteCount', function(){
-      console.log("vote count change caught in songqueueentryview")
-      this.render();
-    }, this);
   },
 
   render: function() {

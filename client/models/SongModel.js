@@ -24,13 +24,13 @@ var SongModel = Backbone.Model.extend({
   },
 
   upvote: function(){
-    this.set('votes', this.get('votes') + 1);
-    // this.trigger('voted');
+    this.set('voteCount', this.get('voteCount') + 1);
+    this.trigger('voted');
   },
 
   downvote: function(){
-    this.set('votes', this.get('votes') - 1);
-    // this.trigger('voted');
+    this.set('voteCount', this.get('voteCount') - 1);
+    this.trigger('voted');
   }
 
 });
