@@ -4,7 +4,7 @@ var SongQueueView = Backbone.View.extend({
   tagName: "table",
 
   initialize: function() {
-    this.render();
+    // this.collection.comparator = 'voteCount';
 
     this.collection.on('add remove', function() {
       this.render();

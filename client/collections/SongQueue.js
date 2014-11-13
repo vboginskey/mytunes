@@ -18,13 +18,16 @@ var SongQueue = Songs.extend({
     this.on('dequeue', function(model){
       this.remove(model);
     });
+
+    this.on('change:voteCount', function(){
+      this.sort();
+    });
   },
 
   playFirst: function(){
     var firstSong = this.at(0);
-    // firstSong.set('playCount', firstSong.get('playCount') + 1);
+    firstSong.set('playCount', firstSong.get('playCount') + 1);
     firstSong.play();
   }
-
 
 });

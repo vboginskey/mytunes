@@ -3,13 +3,30 @@ var SongQueueEntryView = Backbone.View.extend({
 
   tagName: 'tr',
 
-  template: _.template('<td>(<%= artist %>)</td><td><%= title %></td>'),
+  template: _.template('<td><span class="fa fa-minus" id="remove">&nbsp;</span>' +
+                        '<span class="fa fa-thumbs-o-up" id="upvote">&nbsp;</span>' +
+                        '<span class="fa fa-thumbs-o-down" id="downvote">&nbsp;</span></td>' +
+                        '<td><%= artist %> - </td><td><%= title %></td>' +
+                        '<td><%= voteCount %></td>'),
 
   // your code here!
   events: {
-    'click': function(){
+    'click #remove': function(){
       this.model.dequeue();
+    },
+    'click #upvote': function(){
+      this.model.upvote();
+    },
+    'click #downvote': function(){
+      this.model.downvote();
     }
+  },
+
+  initialize: function() {
+    this.model.on('change:voteCount', function(){
+      console.log("vote count change caught in songqueueentryview")
+      this.render();
+    }, this);
   },
 
   render: function() {
