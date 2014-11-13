@@ -3,6 +3,7 @@ var AppModel = Backbone.Model.extend({
 
   initialize: function(params){
     this.set('currentSong', new SongModel());
+    this.set('playlists', new Playlists());
     this.set('songQueue', new SongQueue());
     this.get('songQueue').comparator = function(song) {
       return -song.get('voteCount');

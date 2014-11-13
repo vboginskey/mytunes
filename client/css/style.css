@@ -1,5 +1,9 @@
-audio {
-  width: 500px;
+audio, .container, .player {
+  width: 750px;
+}
+
+.container {
+  margin: 0 auto;
 }
 
 body {
@@ -8,11 +12,49 @@ body {
   font-size: larger;
 }
 
-.main {
+.queue, .library, .playlist {
   background-color: whitesmoke;
   border-radius: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 20px;
+  /*margin-left: auto;*/
+  /*margin-right: auto;*/
+  margin: 10px auto 10px;
+  padding: 15px;
+}
+
+.queue, .library {
+  float: right;
   width: 500px;
+}
+
+.player {
+  margin-bottom: 10px;
+}
+
+.playlist {
+  box-sizing: border-box;
+  float: left;
+  width: 200px;
+}
+
+.playlist span {
+  display: block;
+  font-weight: bold;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+}
+
+tr td:nth-child(1){
+  width: 20px;
+}
+
+tr td:nth-child(3){
+  text-align: right;
+  width: 80px;
+}
+
+.fa {
+  float: left;
 }
