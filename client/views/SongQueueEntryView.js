@@ -4,10 +4,11 @@ var SongQueueEntryView = Backbone.View.extend({
   tagName: 'tr',
 
   template: _.template('<td><span class="fa fa-minus" id="remove">&nbsp;</span>' +
-                        '<span class="fa fa-thumbs-o-up" id="upvote">&nbsp;</span>' +
-                        '<span class="fa fa-thumbs-o-down" id="downvote">&nbsp;</span></td>' +
-                        '<td><%= artist %> - </td><td><%= title %></td>' +
-                        '<td><%= voteCount %></td>'),
+                        '<%= artist %> - </td><td><%= title %></td>' +
+                        '<td><%= voteCount %></td>' +
+                        '<td><span class="fa fa-thumbs-o-up" id="upvote">&nbsp;</span>' +
+                        '<span class="fa fa-thumbs-o-down" id="downvote">&nbsp;</span></td>'
+                        ),
 
   // your code here!
   events: {
