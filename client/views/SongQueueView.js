@@ -3,7 +3,6 @@ var SongQueueView = Backbone.View.extend({
   el: '<div class="queue"><table></table></div>',
 
   initialize: function() {
-    console.log(this.$el);
     this.render();
 
     this.collection.on('add remove sort', function() {
@@ -17,6 +16,11 @@ var SongQueueView = Backbone.View.extend({
         return new SongQueueEntryView({model: song}).render();
       })
     );
+  },
+
+  setPlaylist: function(playlist) {
+    this.collection = playlist;
+    this.initialize();
   }
 
 });

@@ -1,5 +1,5 @@
 audio, .container, .player {
-  width: 750px;
+  width: 800px;
 }
 
 .container {
@@ -33,12 +33,18 @@ body {
 .playlist {
   box-sizing: border-box;
   float: left;
-  width: 200px;
+  width: 250px;
 }
 
-.playlist span {
+.playlist input {
+  border: 1px solid grey;
+}
+
+.playlist span:first-child {
   display: block;
   font-weight: bold;
+  margin-top: 3px;
+  margin-bottom: 4px;
   text-align: center;
 }
 
